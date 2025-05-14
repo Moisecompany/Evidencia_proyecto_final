@@ -28,7 +28,7 @@ def metodo_secante(f, x0, x1, tol, max_iter):
 
 #Entrada de datos por consola
 def leer_datos():
-    print("=== Metodo de la secante===")
+    print("---Metodo de la secante---")
     x0 = float(input("Introduce x0: "))
     x1 = float(input("Introduce x1: "))
     tol = float(input("Introduce la tolerancia (ej: 1e-6): "))
