@@ -26,9 +26,25 @@ def metodo_secante(f, x0, x1, tol, max_iter):
 
             x0, x1 = x1, x2
 
+#Crear la grafica
+def graficar(f, raiz, intervalo):
+    import numpy as np
+    x = np.linspace(intervalo[0], intervalo[1], 400)
+    y = [f(val) for val in x]
+
+    plt.axhline(0, color='gray', linewidth=0.8)
+    plt.plot(x, y, label='f(x)', color='blue')
+    plt.plot(raiz, f(raiz), 'ro', label='Raiz aproximada')
+    plt.title("Metodo de la secante")
+    plt.xlabel("x")
+    plt.ylabel("f(x)")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
 #Entrada de datos por consola
 def leer_datos():
-    print("=== Metodo de la secante===")
+    print("---Metodo de la secante---")
     x0 = float(input("Introduce x0: "))
     x1 = float(input("Introduce x1: "))
     tol = float(input("Introduce la tolerancia (ej: 1e-6): "))
@@ -40,5 +56,6 @@ def leer_datos():
 #Programa principal
 x0, x1, tol, max_iter = leer_datos()
 raiz = metodo_secante(f, x0, x1, tol, max_iter)
-
+#Mostrar la grafica
+graficar(f, raiz, (min(x0, x1) - 1, max(x0, x1) + 1))
 
