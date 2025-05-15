@@ -57,5 +57,5 @@ def leer_datos():
 x0, x1, tol, max_iter = leer_datos()
 raiz = metodo_secante(f, x0, x1, tol, max_iter)
 #Mostrar la grafica
-graficar(f, raiz, (min(x0, x1) - 1, max(x0, x1) + 1))
-
+if raiz is not None:
+     graficar(f, raiz, (min(x0, x1) - 1, max(x0, x1) + 1))
